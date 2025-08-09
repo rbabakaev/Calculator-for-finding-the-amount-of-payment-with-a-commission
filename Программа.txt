@@ -1,0 +1,16 @@
+using System;
+class Program {
+    static void Main() {
+        
+        Console.Write("Сумма, которую хотите получить при комиссии 8%: ");
+        int wanted_sum = Convert.ToInt32(Console.ReadLine());
+        int check_is_this_needed_sum = 1; 
+        for (int i = Convert.ToInt32(Math.Ceiling(wanted_sum * 1.08f)); 
+        (i - 1) * 0.92 < wanted_sum; i++)
+        {
+            check_is_this_needed_sum = i;
+        }
+        Console.Write("Минимальная необходимая целочисленная сумма в данном случае: " + check_is_this_needed_sum);
+
+    }
+}
